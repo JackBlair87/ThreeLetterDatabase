@@ -1,0 +1,17 @@
+pip install profanity-filter
+pip install git+https://github.com/abenassi/Google-Search-API
+python -m spacy download en
+import sqlite3 as sl
+
+
+https://pypi.org/project/profanity-filter/
+https://github.com/abenassi/Google-Search-API
+https://docs.python.org/3/library/sqlite3.html
+
+
+-College
+-Airport
+-Stock Ticker
+-Organization - dump of websites
+
+-3 Letter Databases
