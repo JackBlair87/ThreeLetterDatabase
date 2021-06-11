@@ -18,8 +18,6 @@ with open(COLLEGES) as f:
         DATABASE.add(acronym, (university, result['links'].split("=", 1)[1], result['descriptions'], ""))
       except Exception as e:
         print(acronym, e)
-      # print(result['link'].split("=", 1)[1])
-    
 
 print(str(DATABASE))
 print(repr(DATABASE))

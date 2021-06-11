@@ -7,7 +7,8 @@ from multiprocessing import Pool
 import time
 
 # import Databases.Colleges.CollegeFinder
-import Databases.Stocks.stocksProcessor
+# import Databases.Stocks.stocksProcessor
+import Databases.Airports.airportGenerator
 
 ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 REVERSED_ALPHA = "".join(reversed(ALPHA)) 
@@ -35,8 +36,6 @@ def google_all():
               
               print(str(DATABASE)[-100:])
             
-            # time.sleep(5)
-
         if count > 200:
           break
 
