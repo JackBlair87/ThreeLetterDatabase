@@ -7,6 +7,7 @@ from multiprocessing import Pool
 import time
 
 # import Databases.Colleges.CollegeFinder
+import Databases.Stocks.stocksProcessor
 
 ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 REVERSED_ALPHA = "".join(reversed(ALPHA)) 
@@ -89,18 +90,18 @@ if __name__=="__main__":
   # google_wanted()
 
 
-  values = []
+  # values = []
 
-  for x in ALPHA:
-    for y in ALPHA:
-      for z in ALPHA:
-        values.append(x + y + z)
+  # for x in ALPHA:
+  #   for y in ALPHA:
+  #     for z in ALPHA:
+  #       values.append(x + y + z)
 
-  print(values)
+  # print(values)
 
-  with Pool() as pool:
-      res = pool.map(googlar, values)
+  # with Pool() as pool:
+  #     res = pool.map(googlar, values)
 
-  print(str(DATABASE))
-  print(DATABASE.percent_collected())
+  # print(str(DATABASE))
+  # print(DATABASE.percent_collected())
   pass

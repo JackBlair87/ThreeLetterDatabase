@@ -1,12 +1,17 @@
+from Databases.DatabaseGenerator import Database
 import yfinance as yf
 
-stocks_file = "stock-tickers.txt"
-with open(stocks_file) as f:
+DATABASE = Database("Colleges", 1)
+STOCKS = "./Databases/Stocks/stock-tickers.txt"
+
+with open(STOCKS) as f:
   for line in f:
     ticker = line.split()[0]
     if len(ticker) == 3:
-      
-
+      print(ticker)
+      msft = yf.Ticker(ticker)
+      print(msft.info['shortName'])
+      print(msft.info['longBusinessSummary'])
 
 
 msft = yf.Ticker("MSFT")
@@ -63,7 +68,3 @@ msft.isin
 
 # show options expirations
 msft.options
-
-# get option chain for specific expiration
-opt = msft.option_chain('YYYY-MM-DD')
-# data available via: opt.calls, opt.puts

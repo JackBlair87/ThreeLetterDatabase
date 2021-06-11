@@ -1,19 +1,25 @@
 #Jack Blair 6/8/21
-import sqlite3 as sl
 from web_searcher import WebSearcher
-import pickle
+from Databases.DatabaseGenerator import Database
 
 WS = WebSearcher()
-DATABASE = sl.connect('./Databases/Colleges/college-database.db')
+DATABASE = Database("Colleges", 1)
 COLLEGES = "./Databases/Colleges/college-abreviations.txt"
 
 with open(COLLEGES) as f:
   for line in f:
-    # print(line)
-    # print(line.split("-", 1))
-    acronym = line.split("-", 1)[0]
-    university = line.split("-", 1)[1]
-    if len(acronym.strip()) == 3:
-      print(acronym.strip(), university.strip())
-      result = WS.plain_search(acronym.strip() + " website")[0]
-      print(result['link'].split("=", 1)[1])
+    acronym = line.split("-", 1)[0].strip()
+    university = line.split("-", 1)[1].strip()
+    
+    if len(acronym) == 3:
+      try:
+        print(acronym)
+        result = WS.plain_search(acronym.strip() + " website")[0]
+        DATABASE.add(acronym, (university, result['links'].split("=", 1)[1], result['descriptions'], ""))
+      except Exception as e:
+        print(acronym, e)
+      # print(result['link'].split("=", 1)[1])
+    
+
+print(str(DATABASE))
+print(repr(DATABASE))

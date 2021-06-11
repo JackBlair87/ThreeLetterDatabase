@@ -9,7 +9,10 @@ https://github.com/abenassi/Google-Search-API
 https://docs.python.org/3/library/sqlite3.html
 
 
--College
+[Type, Acronym, Name, Link, Description, Picture]
+-College 
+["College", Acronym, College Name, Website Link, College Description, Website campus picture]
+
 -Airport
 -Stock Ticker
 -Organization - dump of websites
