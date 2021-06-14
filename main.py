@@ -6,9 +6,9 @@ from web_searcher import WebSearcher
 from multiprocessing import Pool
 import time
 
-# import Databases.Colleges.CollegeFinder
-# import Databases.Stocks.stocksProcessor
-import Databases.Airports.airportGenerator
+import Databases.Colleges.CollegeFinder
+import Databases.Stocks.stocksProcessor
+# import Databases.Airports.airportGenerator
 
 ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 REVERSED_ALPHA = "".join(reversed(ALPHA)) 

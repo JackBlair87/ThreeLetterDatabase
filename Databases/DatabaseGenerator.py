@@ -101,3 +101,6 @@ class Database:
             correct += 1
 
     return str(correct/total * 100)[0:5] + "%"
+
+  def __len__(self):
+    return len(self.counts)
