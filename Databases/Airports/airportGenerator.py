@@ -4,12 +4,14 @@ from Databases.DatabaseGenerator import Database
 
 WS = WebSearcher()
 DATABASE = Database("Airports", 1)
-US_AIRPORTS = "./Databases/Airports/airport-codes-US.txt"
+US_AIRPORTS = "./Databases/Airports/all-codes.txt"
+
+website = "https://www.airnav.com/airport/KGAI"
 
 with open(US_AIRPORTS) as f:
   for line in f:
-    airport = line.split("(", 1)[0].strip()
-    acronym = line.split("(", 1)[1].strip()[:-1]
+    acronym = line.split("\"", 1)[0].strip()
+    airport = line.split("\"", 1)[1].split("\"", 1)[0].strip()
     print(acronym, airport)
 
     #webscrape this website
@@ -25,3 +27,4 @@ with open(US_AIRPORTS) as f:
 
 print(str(DATABASE))
 print(repr(DATABASE))
+print(len(DATABASE))

@@ -25,6 +25,9 @@ class Database:
       f.close()
     except:
       self.counts = dict()
+      f = open(self.completion_list,"w+")
+      f.close()
+
 
   def add(self, acronym, entry):
     try:
@@ -45,9 +48,8 @@ class Database:
       pickle.dump(self.counts, f)
       f.close()
 
-    except:
-      print("Item is unoriginal")
-      pass
+    except Exception as e:
+      print(acronym, e)
 
   def __str__(self):
     output = ""
