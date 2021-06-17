@@ -1,4 +1,5 @@
 import sqlite3 as sl
+from pathlib import Path
 import pickle
 
 ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -7,8 +8,11 @@ class Database:
   def __init__(self, category : str, contains_benchmark : int = 10):
     self.database = sl.connect('./Databases/' + category + '/' + category.lower() + '-database.db')
     self.completion_list = './Databases/' + category + '/completion-list.txt'
+    self.database_name = './Databases/' + category + '/' + category.lower() + '-database.db'
     self.db_name = "ENTRIES"
     self.contains_benchmark = contains_benchmark
+
+    self.storage = Path(self.database_name).stat().st_size
 
     try:
       repr(self)
@@ -48,6 +52,8 @@ class Database:
       pickle.dump(self.counts, f)
       f.close()
 
+      self.storage = Path(self.database_name).stat().st_size
+
     except Exception as e:
       print(acronym, e)
 
@@ -74,6 +80,8 @@ class Database:
       f = open(self.completion_list, "wb")
       pickle.dump(self.counts, f)
       f.close()
+
+      self.storage = Path(self.database_name).stat().st_size
 
   def create_table(self):
     with self.database:

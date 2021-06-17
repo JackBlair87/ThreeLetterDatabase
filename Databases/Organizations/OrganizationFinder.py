@@ -25,14 +25,15 @@ def google_remaining(ammount : int):
             for item in results:
               DATABASE.add(acronym, item)
             count += 1
+            print(DATABASE.storage)
+            print(str(DATABASE)[-100:])
           except Exception as e:
             print("Failed on " + acronym + " --> ", e)
           
-          print(str(DATABASE)[-100:])
           print(DATABASE.percent_collected(len(ALPHA) ** 3))
         
         if count > ammount:
           return
 
-google_remaining(3)
-print(repr(DATABASE))
+google_remaining(100)
+print(str(DATABASE))
