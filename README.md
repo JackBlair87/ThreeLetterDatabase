@@ -2,7 +2,7 @@
 )
 Ever wondered how many three letter organizations there are? The AAA (American Automobile Association), or the FDA (Food and Drug Administration); what about countless airport codes, or college abreviations? To get experience dealing with large ammounts of data, I built a database to srape the internet for these organization acronyms and stores them as well as information about the organizations. 
 
-#https://tinyurl.com/ThreeLetterDatabase
+https://tinyurl.com/ThreeLetterDatabase
 
 ![Example Database Entry](https://static.wixstatic.com/media/9ee6ac_d45146ce4363469abc4d7a6ea65aceae~mv2.png
 )
